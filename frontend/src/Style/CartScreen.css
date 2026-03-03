@@ -1,0 +1,339 @@
+/* Cart Page Custom Styles based on provided image */
+
+.cart-page .breadcrumb-area {
+    background: none;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+}
+
+.cart-page .radios-breadcrumb ul {
+    margin: 0;
+    margin-left: 70px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.cart-page .radiosbcrumb-item a {
+    color: #888;
+    text-decoration: none;
+}
+
+.cart-page .separator {
+    margin: 0 10px;
+    color: #888;
+}
+
+.cart-page .radiosbcrumb-item.active {
+    color: #FF8717;
+}
+
+.cart-page .shop_table {
+    width: 100%;
+    border: 1px solid #ebebeb;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.cart-page .shop_table thead th {
+    background-color: #f9f9f9;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    color: #555;
+    padding: 15px;
+    border: 1px solid #ebebeb;
+    text-align: center;
+}
+
+.cart-page .shop_table thead th.product-name {
+    text-align: left;
+    padding-left: 100px;
+}
+
+.cart-page .shop_table tbody td {
+    padding: 20px 15px;
+    vertical-align: middle;
+    border: 1px solid #ebebeb;
+    text-align: center;
+}
+
+.cart-page .product-col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.cart-page .product-remove {
+    margin-right: 20px;
+}
+
+.cart-page .product-remove .remove {
+    color: #ccc;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.cart-page .product-remove .remove:hover {
+    background-color: #FF8717;
+    color: #fff;
+    border-color: #FF8717;
+}
+
+.cart-page .product-thumbnail img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+
+.cart-page .product-name-text {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cart-page .product-price,
+.cart-page .product-subtotal {
+    font-size: 15px;
+    color: #555;
+}
+
+/* Quantity Input Styling */
+.cart-page .quantity {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ebebeb;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.cart-page .quantity .qty-btn {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    color: #999;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cart-page .quantity input {
+    width: 35px;
+    border: none;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Actions Wrapper */
+.cart-page .actions-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ebebeb;
+    border-top: none;
+    margin-top: -30px;
+    margin-bottom: 50px;
+}
+
+.cart-page .coupon-form {
+    display: flex;
+    gap: 10px;
+}
+
+.cart-page .coupon-form input {
+    border: 1px solid #ebebeb;
+    padding: 10px 15px;
+    width: 200px;
+    font-size: 14px;
+}
+
+/* Buttons */
+.cart-page .btn-orange {
+    background-color: #FF8717;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cart-page .btn-orange:hover {
+    background-color: #e67600;
+}
+
+.cart-page .btn-light-orange {
+    background-color: #ffc28c;
+    color: #fff;
+    padding: 10px 25px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+/* Cart Totals section */
+.cart-page .cart-totals-section {
+    margin-top: 50px;
+}
+
+.cart-page .cart-totals-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.cart-page .totals-table {
+    width: 100%;
+    border: 1px solid #ebebeb;
+    border-collapse: collapse;
+}
+
+.cart-page .totals-table th,
+.cart-page .totals-table td {
+    border: 1px solid #ebebeb;
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.cart-page .totals-table td {
+    color: #111;
+    font-weight: 500;
+}
+
+.cart-page .checkout-btn-wrap {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.cart-page .btn-checkout {
+    background-color: #FF8717;
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+/* ── Mobile Cart Cards ── */
+.cart-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 0;
+}
+
+.cart-mobile-card {
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.cart-mobile-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 10px;
+}
+
+.cart-mobile-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.cart-mobile-card-body {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.cart-mobile-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-mobile-label {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.cart-mobile-value {
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Coupon form responsive */
+@media (max-width: 575.98px) {
+    .cart-page .coupon-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cart-page .coupon-form input {
+        width: 100%;
+    }
+
+    .cart-page .coupon-form .btn-orange {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cart-page .actions-wrap {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .cart-page .checkout-btn-wrap {
+        text-align: center;
+    }
+
+    .cart-page .btn-checkout {
+        width: 100%;
+        padding: 14px 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .cart-page .cart-totals-section {
+        margin-top: 30px;
+    }
+}

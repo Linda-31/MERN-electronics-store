@@ -1,0 +1,143 @@
+.product-card {
+    border: 1px solid #f0f0f0;
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #fff;
+    height: 100%;
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.product-image-container {
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-actions {
+    position: absolute;
+    right: -50px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: right 0.3s ease;
+}
+
+.product-card:hover .product-actions {
+    right: 15px;
+}
+
+.action-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.action-btn:hover {
+    background: #ff8717;
+    color: #fff;
+    border-color: #ff8717;
+}
+
+.product-body {
+    padding: 15px 20px 25px;
+    text-align: left;
+}
+
+.product-rating {
+    margin-bottom: 8px;
+}
+
+.product-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    height: 42px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-name a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.product-name a:hover {
+    color: #ff8717;
+}
+
+.product-price-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff4d4d;
+}
+
+.product-old-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+/* List View Styles */
+.product-card.list-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.product-card.list-view .product-image-container {
+    flex: 0 0 250px;
+    padding: 15px;
+}
+
+.product-card.list-view .product-body {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Ensure it occupies space */
+    min-height: 100px;
+    /* Force minimum height in case auto fails */
+    transition: transform 0.5s ease;
+    object-fit: contain;
+}

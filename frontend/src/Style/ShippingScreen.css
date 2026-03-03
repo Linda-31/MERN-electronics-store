@@ -1,0 +1,176 @@
+.shipping-page .breadcrumb-area {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    margin-bottom: 50px;
+}
+
+.shipping-page .radios-breadcrumb ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.shipping-page .radiosbcrumb-item a {
+    color: #111;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.shipping-page .radiosbcrumb-item.active {
+    color: #FF8717;
+}
+
+.shipping-page .checkout-steps {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.shipping-page .checkout-steps .step-item {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 40px;
+}
+
+.shipping-page .checkout-steps .step-item.active {
+    color: #FF8717;
+}
+
+.shipping-page .checkout-steps .step-item:not(:last-child)::after {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: -5px;
+    color: #ccc;
+    font-size: 12px;
+}
+
+.shipping-page .billing-details h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #111;
+    text-transform: capitalize;
+}
+
+.shipping-page .form-group {
+    margin-bottom: 20px;
+}
+
+.shipping-page .form-group label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.shipping-page .form-control {
+    height: 55px;
+    border: 1px solid #ebebeb;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.shipping-page .form-control:focus {
+    border-color: #FF8717;
+    box-shadow: none;
+    outline: none;
+}
+
+.shipping-page .thm-btn {
+    background-color: #FF8717;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    transition: all 0.3s;
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.shipping-page .thm-btn:hover {
+    background-color: #111;
+    transform: translateY(-2px);
+}
+
+.shipping-page .order-summary-box {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.shipping-page .order-summary-box h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #111;
+}
+
+.shipping-page .order-summary-table {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.shipping-page .order-summary-table th,
+.shipping-page .order-summary-table td {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    color: #666;
+}
+
+.shipping-page .order-summary-table th {
+    font-weight: 700;
+    color: #111;
+    text-transform: uppercase;
+}
+
+.shipping-page .order-summary-table .summary-total td,
+.shipping-page .order-summary-table .summary-final td {
+    padding-top: 20px;
+    font-weight: 700;
+    color: #111;
+    border-bottom: none;
+}
+
+.shipping-page .payment-notice-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.shipping-page .payment-notice-box p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.shipping-page .privacy-text {
+    font-size: 13px !important;
+}
+
+.shipping-page .privacy-text a {
+    color: #FF8717;
+    text-decoration: none;
+}
+
+.shipping-page .thm-btn.w-100 {
+    width: 100%;
+}

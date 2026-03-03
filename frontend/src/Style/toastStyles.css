@@ -1,0 +1,63 @@
+/* Custom Success Toast Styles */
+
+:root {
+    --toastify-color-success: #50AD06;
+    --toastify-icon-color-success: #50AD06;
+}
+
+.custom-toast {
+    background-color: #fff !important;
+    color: #333 !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    min-height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.custom-toast-body {
+    padding: 0 10px !important;
+}
+
+.custom-toast-title {
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    margin-bottom: 4px !important;
+    color: #111 !important;
+}
+
+.custom-toast-message {
+    font-size: 14px !important;
+    color: #666 !important;
+}
+
+.custom-toast-icon {
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #f0fdf4 !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #22c55e !important;
+    font-size: 20px !important;
+    margin-right: 15px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Progress Bar */
+.Toastify__progress-bar--success {
+    background: #22c55e !important;
+}
+
+/* Close Button */
+.Toastify__close-button {
+    color: #ccc !important;
+    opacity: 1 !important;
+    align-self: center !important;
+}
+
+.Toastify__close-button:hover {
+    color: #999 !important;
+}
