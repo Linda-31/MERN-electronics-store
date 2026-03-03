@@ -53,6 +53,7 @@ app.use('/api/blogs', blogRoutes);
 const subscriberRoutes = require('./routes/subscriberRoutes');
 app.use('/api/subscribers', subscriberRoutes);
 
+
 const path = require('path');
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
