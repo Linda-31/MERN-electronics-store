@@ -79,13 +79,7 @@ const Product = ({ product, showDetails }) => {
             }
         }
     };
-    // Helper to ensure image path is correct
-    // const getImagePath = (img) => {
-    //     if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
-    //     if (img.startsWith('http') || img.startsWith('https')) return img;
-    //     // Ensure starting slash
-    //     return img.startsWith('/') ? img : `/${img}`;
-    // };
+   
     const getImagePath = (img) => {
     if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
     
