@@ -23,7 +23,8 @@ app.use(cors({
     credentials: true 
 }));
 app.use(express.json());
-
+const path = require('path');
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 // Log incoming requests
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);
@@ -58,8 +59,7 @@ const subscriberRoutes = require('./routes/subscriberRoutes');
 app.use('/api/subscribers', subscriberRoutes);
 
 
-const path = require('path');
-app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+
 
 app.use(notFound);
 app.use(errorHandler);

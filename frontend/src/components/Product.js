@@ -80,12 +80,24 @@ const Product = ({ product, showDetails }) => {
         }
     };
     // Helper to ensure image path is correct
+    // const getImagePath = (img) => {
+    //     if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
+    //     if (img.startsWith('http') || img.startsWith('https')) return img;
+    //     // Ensure starting slash
+    //     return img.startsWith('/') ? img : `/${img}`;
+    // };
     const getImagePath = (img) => {
-        if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
-        if (img.startsWith('http') || img.startsWith('https')) return img;
-        // Ensure starting slash
-        return img.startsWith('/') ? img : `/${img}`;
-    };
+    if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
+    
+    // If it's already a full URL (like from Cloudinary or an external site), use it
+    if (img.startsWith('http') || img.startsWith('https')) return img;
+    
+    // Ensure the path starts with a slash
+    const imagePath = img.startsWith('/') ? img : `/${img}`;
+    
+    // PREPEND the backend URL so the browser knows where to find the file
+    return `${BACKEND_URL}${imagePath}`;
+};
 
     const handleImageError = (e) => {
         const currentSrc = e.target.src;
