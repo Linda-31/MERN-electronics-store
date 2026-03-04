@@ -80,17 +80,20 @@ const Product = ({ product, showDetails }) => {
         }
     };
    const BACKEND_URL = 'https://your-backend-service-name.onrender.com';
-    const getImagePath = (img) => {
+  
+   const getImagePath = (img) => {
     if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
-    
-    // If it's already a full URL (like from Cloudinary or an external site), use it
-    if (img.startsWith('http') || img.startsWith('https')) return img;
-    
-    // Ensure the path starts with a slash
-    const imagePath = img.startsWith('/') ? img : `/${img}`;
-    
-    // PREPEND the backend URL so the browser knows where to find the file
-    return `${BACKEND_URL}${imagePath}`;
+
+    if (img.startsWith('http')) return img;
+
+    // 1. Replace all backslashes (\) with forward slashes (/)
+    // 2. Ensure it starts with a single slash
+    let cleanPath = img.replace(/\\/g, '/');
+    if (!cleanPath.startsWith('/')) {
+        cleanPath = '/' + cleanPath;
+    }
+
+    return `${BACKEND_URL}${cleanPath}`;
 };
 
     const handleImageError = (e) => {

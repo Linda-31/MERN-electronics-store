@@ -36,14 +36,26 @@ const upload = multer({
 });
 
 // Single image upload
+// router.post('/', upload.single('image'), (req, res) => {
+//     res.send(`/${req.file.path}`);
+// });
+
+// // Multiple image upload
+// router.post('/multiple', upload.array('images', 5), (req, res) => {
+//     const filePaths = req.files.map((file) => `/${file.path}`);
+//     res.send(filePaths);
+// });
+// Single image upload
 router.post('/', upload.single('image'), (req, res) => {
-    res.send(`/${req.file.path}`);
+    // CHANGE: Use .replace(/\\/g, '/') to turn backslashes into forward slashes
+    const cleanPath = req.file.path.replace(/\\/g, '/');
+    res.send(`/${cleanPath}`);
 });
 
 // Multiple image upload
 router.post('/multiple', upload.array('images', 5), (req, res) => {
-    const filePaths = req.files.map((file) => `/${file.path}`);
+    // CHANGE: Fix backslashes for every file in the array
+    const filePaths = req.files.map((file) => `/${file.path.replace(/\\/g, '/')}`);
     res.send(filePaths);
 });
-
 module.exports = router;
