@@ -9,6 +9,8 @@ import App from './App';
 import { StoreProvider } from './context/StoreContext';
 axios.defaults.baseURL = 'https://server-store-api.onrender.com';
 
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

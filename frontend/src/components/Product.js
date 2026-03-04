@@ -81,31 +81,57 @@ const Product = ({ product, showDetails }) => {
     };
    const BACKEND_URL = 'https://your-backend-service-name.onrender.com';
   
-   const getImagePath = (img) => {
+//    const getImagePath = (img) => {
+//     if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
+
+//     if (img.startsWith('http')) return img;
+
+//     // 1. Replace all backslashes (\) with forward slashes (/)
+//     // 2. Ensure it starts with a single slash
+//     let cleanPath = img.replace(/\\/g, '/');
+//     if (!cleanPath.startsWith('/')) {
+//         cleanPath = '/' + cleanPath;
+//     }
+
+//     return `${BACKEND_URL}${cleanPath}`;
+// };
+const getImagePath = (img) => {
     if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
 
+    // 1. Cloudinary or external URLs (Starts with http)
     if (img.startsWith('http')) return img;
 
-    // 1. Replace all backslashes (\) with forward slashes (/)
-    // 2. Ensure it starts with a single slash
+    // 2. Legacy Local Paths (Starts with /uploads or similar)
+    // Normalize slashes (mostly for Windows legacy data)
     let cleanPath = img.replace(/\\/g, '/');
+    
+    // Ensure it starts with exactly one slash
     if (!cleanPath.startsWith('/')) {
         cleanPath = '/' + cleanPath;
     }
 
-    return `${BACKEND_URL}${cleanPath}`;
+    // 3. Remove trailing slash from BACKEND_URL to avoid "com//uploads"
+    const base = BACKEND_URL.endsWith('/') ? BACKEND_URL.slice(0, -1) : BACKEND_URL;
+
+    return `${base}${cleanPath}`;
 };
-
-    const handleImageError = (e) => {
-        const currentSrc = e.target.src;
-        // If image in /images fails, try /uploads as a fallback if the seeder/data mismatch
-        if (currentSrc.includes('/images/')) {
-            e.target.src = currentSrc.replace('/images/', '/uploads/');
-        } else if (!currentSrc.includes('placeholder.com')) {
-            e.target.src = 'https://via.placeholder.com/300x300?text=No+Image';
-        }
-    };
-
+    // const handleImageError = (e) => {
+    //     const currentSrc = e.target.src;
+    //     // If image in /images fails, try /uploads as a fallback if the seeder/data mismatch
+    //     if (currentSrc.includes('/images/')) {
+    //         e.target.src = currentSrc.replace('/images/', '/uploads/');
+    //     } else if (!currentSrc.includes('placeholder.com')) {
+    //         e.target.src = 'https://via.placeholder.com/300x300?text=No+Image';
+    //     }
+    // };
+const handleImageError = (e) => {
+    // Avoid infinite loops if the placeholder itself fails
+    if (e.target.src.includes('placeholder.com')) return;
+    
+    // If a specific folder path fails, try a generic fallback
+    console.warn("Image failed to load, falling back to placeholder.");
+    e.target.src = 'https://via.placeholder.com/300x300?text=No+Image';
+};
     return (
         <div className={`product-card ${showDetails ? 'list-view' : ''}`}>
             <div className='product-image-container'>
