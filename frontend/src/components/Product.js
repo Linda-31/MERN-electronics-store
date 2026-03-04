@@ -79,7 +79,7 @@ const Product = ({ product, showDetails }) => {
             }
         }
     };
-   
+   const BACKEND_URL = 'https://your-backend-service-name.onrender.com';
     const getImagePath = (img) => {
     if (!img) return 'https://via.placeholder.com/300x300?text=No+Image';
     
