@@ -135,11 +135,8 @@ const createProduct = asyncHandler(async (req, res) => {
         description,
         sku,
         colors,
-        images,
     } = req.body;
-const imagePaths = images && Array.isArray(images) 
-        ? images.map(img => typeof img === 'object' ? img.url : img) 
-        : [];
+
     const product = new Product({
         name: name || 'Sample name',
         price: price || 0,
@@ -153,7 +150,6 @@ const imagePaths = images && Array.isArray(images)
         sku: sku || 'radios-sku-000',
         colors: colors || [],
         logo: 'No',
-        images: imagePaths || [],
     });
 
     const createdProduct = await product.save();
@@ -175,15 +171,11 @@ const updateProduct = asyncHandler(async (req, res) => {
         sku,
         colors,
         logo,
-        images,
     } = req.body;
 
     const product = await Product.findById(req.params.id);
 
     if (product) {
-        const imagePaths = images && Array.isArray(images) 
-            ? images.map(img => typeof img === 'object' ? img.url : img) 
-            : product.images;
         product.name = name || product.name;
         product.price = price || product.price;
         product.description = description || product.description;
@@ -194,7 +186,6 @@ const updateProduct = asyncHandler(async (req, res) => {
         product.sku = sku || product.sku;
         product.colors = colors || product.colors;
         product.logo = logo || product.logo;
-       product.images = imagePaths;
 
         const updatedProduct = await product.save();
         res.json(updatedProduct);

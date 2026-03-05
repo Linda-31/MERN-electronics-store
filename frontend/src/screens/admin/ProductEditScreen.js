@@ -40,7 +40,6 @@ const ProductEditScreen = () => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState(0);
     const [image, setImage] = useState('');
-    const [images, setImages] = useState([]);
     const [brand, setBrand] = useState('');
     const [category, setCategory] = useState('');
     const [countInStock, setCountInStock] = useState(0);
@@ -59,7 +58,6 @@ const ProductEditScreen = () => {
                 setName(data.name);
                 setPrice(data.price);
                 setImage(data.image);
-                setImages(data.images || []);
                 setBrand(data.brand);
                 setCategory(data.category);
                 setCountInStock(data.countInStock);
@@ -75,19 +73,10 @@ const ProductEditScreen = () => {
         fetchData();
     }, [productId, userInfo, navigate]);
 
-    const uploadFileHandler = async (e, type = 'single') => {
+    const uploadFileHandler = async (e) => {
         const file = e.target.files[0];
         const formData = new FormData();
-        
-        if (type === 'multiple') {
-            const files = e.target.files;
-            for (let i = 0; i < files.length; i++) {
-                formData.append('images', files[i]);
-            }
-        } else {
-            formData.append('image', file);
-        }
-        
+        formData.append('image', file);
         setUploading(true);
 
         try {
@@ -98,13 +87,8 @@ const ProductEditScreen = () => {
                 },
             };
 
-            if (type === 'multiple') {
-                const { data } = await axios.post('/api/upload/multiple', formData, config);
-                setImages(data);
-            } else {
-                const { data } = await axios.post('/api/upload', formData, config);
-                setImage(data);
-            }
+            const { data } = await axios.post('/api/upload', formData, config);
+            setImage(data);
             setUploading(false);
             toast.success('Image uploaded successfully');
         } catch (error) {
@@ -125,7 +109,6 @@ const ProductEditScreen = () => {
                     name,
                     price,
                     image,
-                    images,
                     brand,
                     category,
                     countInStock,
@@ -261,9 +244,9 @@ const ProductEditScreen = () => {
 
                             <Col lg={4}>
                                 <Card className="border-0 shadow-none bg-light p-4 mb-4" style={{ borderRadius: '12px' }}>
-                                    <h5 className="fw-bold mb-4">Product Visuals</h5>
-                                    <Form.Group className="mb-4" controlId='image'>
-                                        <Form.Label className="fw-semibold text-muted small">MAIN IMAGE URL</Form.Label>
+                                    <h5 className="fw-bold mb-4">Product Visual</h5>
+                                    <Form.Group controlId='image'>
+                                        <Form.Label className="fw-semibold text-muted small">IMAGE URL</Form.Label>
                                         <Form.Control
                                             type='text'
                                             placeholder='Enter image url'
@@ -274,7 +257,7 @@ const ProductEditScreen = () => {
                                         ></Form.Control>
                                         <div className="upload-btn-wrapper">
                                             <Button variant="outline-primary" className="w-100 py-2" style={{ borderRadius: '8px', borderStyle: 'dashed' }}>
-                                                {uploading ? 'Uploading...' : '+ Change Main Image'}
+                                                {uploading ? 'Uploading...' : '+ Change Image'}
                                                 <Form.Control
                                                     type='file'
                                                     onChange={uploadFileHandler}
@@ -285,28 +268,6 @@ const ProductEditScreen = () => {
                                         {image && <div className="mt-3 text-center bg-white p-3 rounded shadow-sm">
                                             <img src={image} alt="Preview" style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'contain' }} />
                                         </div>}
-                                    </Form.Group>
-
-                                    <Form.Group className="mb-4" controlId='multiple-images'>
-                                        <Form.Label className="fw-semibold text-muted small">GALLERY IMAGES</Form.Label>
-                                        <div className="upload-btn-wrapper">
-                                            <Button variant="outline-secondary" className="w-100 py-2" style={{ borderRadius: '8px', borderStyle: 'dashed' }}>
-                                                {uploading ? 'Uploading...' : '+ Change Gallery Images'}
-                                                <Form.Control
-                                                    type='file'
-                                                    multiple
-                                                    onChange={(e) => uploadFileHandler(e, 'multiple')}
-                                                    style={{ position: 'absolute', opacity: 0, left: 0, top: 0, height: '100%', cursor: 'pointer' }}
-                                                />
-                                            </Button>
-                                        </div>
-                                        {images && images.length > 0 && (
-                                            <div className="mt-3 d-flex flex-wrap gap-2 justify-content-center bg-white p-2 rounded shadow-sm">
-                                                {images.map((img, idx) => (
-                                                    <img key={idx} src={img} alt={`Gallery ${idx}`} style={{ width: '60px', height: '60px', objectFit: 'cover', borderRadius: '4px' }} />
-                                                ))}
-                                            </div>
-                                        )}
                                     </Form.Group>
                                 </Card>
 

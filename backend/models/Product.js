@@ -73,9 +73,6 @@ const productSchema = mongoose.Schema(
         logo: {
             type: String, // "Yes" or "No"
         },
-        images: {
-            type: [String],
-        },
     },
     {
         timestamps: true,

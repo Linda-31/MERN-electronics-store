@@ -51,10 +51,4 @@ router.post('/', upload.single('image'), (req, res) => {
     res.send(req.file.path);
 });
 
-// Multiple image upload (up to 5)
-router.post('/multiple', upload.array('images', 5), (req, res) => {
-    const filePaths = req.files.map((file) => file.path);
-    res.send(filePaths);
-});
-
 module.exports = router;
