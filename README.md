@@ -1,4 +1,4 @@
-# ⚡ MERN Electronics Store
+# MERN Electronics Store
 
 ---
 
@@ -6,7 +6,7 @@ A **high-performance e-commerce platform** for electronics, built using the **ME
 
 ---
 
-## 🚀 Features
+## Features
 
 * 🔒 **JWT Authentication** — Secure login and session management using JSON Web Tokens.
 * 🧭 **Responsive Design** — Fully mobile-friendly layout built with **Bootstrap & CSS**.
@@ -18,7 +18,7 @@ A **high-performance e-commerce platform** for electronics, built using the **ME
 
 ---
 
-## 🧑‍💻 Technology Stack
+## Technology Stack
 
 | Category | Technologies |
 | :--- | :--- |
@@ -42,18 +42,18 @@ A **high-performance e-commerce platform** for electronics, built using the **ME
 
 ---
 
-## 🖼️ Project Gallery
+## Project Gallery
 
-### 🏠 Home Page
-
-
-### 📱 Product Details
+###  Home Page
 
 
-### 🛒 Cart & Wishlist
+### Product Details
 
 
-### 📊 Admin Dashboard
+### Cart & Wishlist
+
+
+###  Admin Dashboard
 
 
 ---
@@ -66,7 +66,7 @@ You can access the live version of this project here:
 
 ---
 
-## 🧾 Installation Guide
+##  Installation Guide
 
 ```bash
 # 1. Clone the repository
