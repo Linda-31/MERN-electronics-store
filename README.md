@@ -31,7 +31,7 @@ A **high-performance e-commerce platform** for electronics, built using the **ME
 
 ---
 
-## ⚙️ Project Workflow
+## Project Workflow
 
 1.  **Authentication**: Users register and verify identity via JWT-based secure login.
 2.  **Tech Discovery**: Browse and filter electronics by category, specs, and price.
@@ -45,7 +45,7 @@ A **high-performance e-commerce platform** for electronics, built using the **ME
 ## Project Gallery
 
 ###  Home Page
-
+<img width="1358" height="7959" alt="Image" src="https://github.com/user-attachments/assets/17ee2f6d-012a-4f1f-b865-ee7f18efcd22" />
 
 ### Product Details
 
