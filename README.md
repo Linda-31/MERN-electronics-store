@@ -45,16 +45,19 @@ A **high-performance e-commerce platform** for electronics, built using the **ME
 ## Project Gallery
 
 ###  Home Page
-<img width="1862" height="898" alt="Image" src="https://github.com/user-attachments/assets/17ee2f6d-012a-4f1f-b865-ee7f18efcd22" />
+<img width="1895" height="903" alt="Image" src="https://github.com/user-attachments/assets/3401b56c-dc7c-461a-a967-7b4e46e14865" />
 
-### Product Details
+###  Shop Page
+<img width="1896" height="905" alt="Image" src="https://github.com/user-attachments/assets/99bea4cd-1996-4cec-8f03-0e10f0e7e973" />
 
+### Shoping Cart 
+<img width="1358" height="1469" alt="Image" src="https://github.com/user-attachments/assets/c1b39456-2e19-4283-9a48-91f4913dacfa" />
 
-### Cart & Wishlist
-
+### Payment success
+<img width="1358" height="1536" alt="Image" src="https://github.com/user-attachments/assets/9dba98d9-bc21-4ac0-8127-87fadf0aa4dc" />
 
 ###  Admin Dashboard
-
+<img width="1332" height="641" alt="Image" src="https://github.com/user-attachments/assets/d922d89d-3bf9-45f5-8c85-08f0ca014054" />
 
 ---
 
