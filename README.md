@@ -58,11 +58,11 @@ A **high-performance e-commerce platform** for electronics, built using the **ME
 
 ---
 
-## 🌐 Live Demo
+## 🌐 Project in Live 
 
 You can access the live version of this project here:
 
-🚀 **ElectronicsStore:** [https://frontend-store-api.onrender.com](https://frontend-store-api.onrender.com)
+**ElectronicsStore:** [https://frontend-store-api.onrender.com](https://frontend-store-api.onrender.com)
 
 ---
 
