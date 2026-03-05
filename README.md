@@ -13,6 +13,7 @@ A **high-performance e-commerce platform** for electronics, built using the **ME
 * 🛍️ **Cart & Wishlist** — Dynamic management of favorite gadgets and electronics.
 * 💳 **Secure Payments** — Integrated support for **Stripe (Cards)** and **GPay (Mobile)**.
 * 📈 **Admin Dashboard** — Full control over inventory, user data, and sales tracking.
+* 🤖 **ChatBot** — Real-time support system connecting users to admins for instant inquiry resolution.
 * 🔄 **Product CRUD** — Admins can add, update, or remove electronics with ease.
 * 🧩 **Real-time Updates** — Frontend-to-backend communication powered by **Axios**.
 
