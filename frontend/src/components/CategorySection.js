@@ -16,19 +16,25 @@ const CategorySection = () => {
         pauseOnHover: false,
         responsive: [
             {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                },
+            },
+            {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 3,
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
                 },
             },
             {
-                breakpoint: 480,
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 1,
                 },
@@ -86,6 +92,21 @@ const CategorySection = () => {
                 }
                 .category-card:hover img {
                     transform: scaleX(-1);
+                }
+                @media (max-width: 576px) {
+                    .category-card {
+                        height: 200px !important;
+                        border-radius: 50px !important;
+                    }
+                    .category-card .card-body {
+                        padding: 15px 5px !important;
+                    }
+                    .category-card img {
+                        height: 70px !important;
+                    }
+                    .category-card .card-title {
+                        font-size: 0.9rem !important;
+                    }
                 }
             `}</style>
             <Container fluid>
