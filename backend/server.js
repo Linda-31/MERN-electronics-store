@@ -1,4 +1,14 @@
 const express = require('express');
+const dotenv = require('dotenv');
+
+// Load env vars first
+dotenv.config();
+
+// Fix for SSL alert number 80 / TLS handshake issues in development
+if (process.env.NODE_ENV === 'development') {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+}
+
 // Suppress DEP0060: util._extend deprecation warning from dependencies
 process.removeAllListeners('warning');
 process.on('warning', (warning) => {
@@ -6,13 +16,10 @@ process.on('warning', (warning) => {
   console.warn(warning);
 });
 
-const dotenv = require('dotenv');
 const colors = require('colors');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
-
-dotenv.config();
 
 connectDB();
 

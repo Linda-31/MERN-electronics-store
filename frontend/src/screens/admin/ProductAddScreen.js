@@ -280,7 +280,7 @@ const ProductAddScreen = () => {
                             <Card className="border-0 shadow-none bg-light p-4 mb-4" style={{ borderRadius: '12px' }}>
                                 <h5 className="fw-bold mb-4">Product Images</h5>
                                 <Form.Group className="mb-4" controlId='image'>
-                                    <Form.Label className="fw-semibold text-muted small">IMAGE URL</Form.Label>
+                                    <Form.Label className="fw-semibold text-muted small">MAIN IMAGE URL</Form.Label>
                                     <Form.Control
                                         type='text'
                                         placeholder='Enter image url'
@@ -291,7 +291,7 @@ const ProductAddScreen = () => {
                                     />
                                     <div className="upload-btn-wrapper">
                                         <Button variant="outline-primary" className="w-100 py-2" style={{ borderRadius: '8px', borderStyle: 'dashed' }}>
-                                            {uploading ? 'Uploading...' : '+ Upload Image'}
+                                            {uploading ? 'Uploading...' : '+ Upload Main Image'}
                                             <Form.Control
                                                 type='file'
                                                 onChange={uploadFileHandler}
@@ -304,7 +304,27 @@ const ProductAddScreen = () => {
                                     </div>}
                                 </Form.Group>
 
-
+                                <Form.Group className="mb-4" controlId='multiple-images'>
+                                    <Form.Label className="fw-semibold text-muted small">GALLERY IMAGES</Form.Label>
+                                    <div className="upload-btn-wrapper">
+                                        <Button variant="outline-secondary" className="w-100 py-2" style={{ borderRadius: '8px', borderStyle: 'dashed' }}>
+                                            {uploading ? 'Uploading...' : '+ Upload Gallery Images'}
+                                            <Form.Control
+                                                type='file'
+                                                multiple
+                                                onChange={(e) => uploadFileHandler(e, 'multiple')}
+                                                style={{ position: 'absolute', opacity: 0, left: 0, top: 0, height: '100%', cursor: 'pointer' }}
+                                            />
+                                        </Button>
+                                    </div>
+                                    {images && images.length > 0 && (
+                                        <div className="mt-3 d-flex flex-wrap gap-2 justify-content-center bg-white p-2 rounded shadow-sm">
+                                            {images.map((img, idx) => (
+                                                <img key={idx} src={img} alt={`Gallery ${idx}`} style={{ width: '60px', height: '60px', objectFit: 'cover', borderRadius: '4px' }} />
+                                            ))}
+                                        </div>
+                                    )}
+                                </Form.Group>
                             </Card>
 
                             <Button
