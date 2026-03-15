@@ -109,7 +109,7 @@ const CategorySection = () => {
                     }
                 }
             `}</style>
-            <Container fluid>
+            <Container fluid className="d-none d-sm-block">
                 <Slider {...settings}>
                     {categories.map((cat, index) => (
                         <div key={index} style={{ padding: '0 10px' }}>
@@ -140,6 +140,37 @@ const CategorySection = () => {
                         </div>
                     ))}
                 </Slider>
+            </Container>
+
+            {/* Mobile View: Static 2-column grid */}
+            <Container className="d-block d-sm-none">
+                <div className="row g-3">
+                    {categories.map((cat, index) => (
+                        <div key={index} className="col-6">
+                            <Link to={cat.link} style={{ textDecoration: 'none' }}>
+                                <Card
+                                    className="border-0 shadow-sm category-card w-100"
+                                    style={{
+                                        borderRadius: '40px',
+                                        overflow: 'hidden',
+                                        textAlign: 'center',
+                                        height: '200px',
+                                        backgroundColor: cat.bgColor,
+                                    }}
+                                >
+                                    <Card.Body style={{ padding: '20px 10px' }}>
+                                        <div style={{ marginBottom: '10px', height: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                            <img src={cat.image} alt={cat.name} style={{ maxHeight: '100%', maxWidth: '100%' }} />
+                                        </div>
+                                        <Card.Title style={{ fontSize: '0.85rem', fontWeight: 'bold', color: '#333', whiteSpace: 'pre-line' }}>
+                                            {cat.name}
+                                        </Card.Title>
+                                    </Card.Body>
+                                </Card>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </Container>
         </div>
     );
