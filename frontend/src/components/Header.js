@@ -89,15 +89,15 @@ const Header = () => {
                 <Container>
                     <div className='row align-items-center'>
                         {/* Logo */}
-                        <div className='col-6 col-lg-3'>
+                        <div className='col-6 col-lg-3 logo-col'>
                             <LinkContainer to='/' style={{ cursor: 'pointer' }}>
-                                <div className='d-flex align-items-center'>
+                                <div className='d-flex align-items-center logo-wrapper'>
                                     <div className='logo-icon me-2'>
-                                        <img src={logoImg} alt="Radios Logo" className='img-fluid' style={{ maxWidth: '45px', borderRadius: '8px' }} />
+                                        <img src={logoImg} alt="Radios Logo" className='img-fluid logo-img' style={{ borderRadius: '8px' }} />
                                     </div>
-                                    <div className='d-none d-sm-block'>
-                                        <h2 className='m-0 fw-bold h4' style={{ color: '#000', letterSpacing: '-1px' }}>Radios</h2>
-                                        <p className='m-0 text-muted small' style={{ marginTop: '-3px' }}>Electronics Store</p>
+                                    <div className="logo-text-block">
+                                        <h2 className='m-0 fw-bold logo-title' style={{ color: '#000', letterSpacing: '-1px' }}>Radios</h2>
+                                        <p className='m-0 text-muted logo-subtitle' style={{ marginTop: '-3px' }}>Electronics Store</p>
                                     </div>
                                 </div>
                             </LinkContainer>
@@ -217,6 +217,57 @@ const Header = () => {
                 .no-chevron .dropdown-toggle::after { display: none !important; }
                 .nav-link:hover, .nav-link.active { color: #FF8717 !important; }
                 .custom-badge { background-color: #FF8717 !important; color: #fff !important; }
+
+                .logo-img { max-width: 45px; }
+                .logo-title { font-size: 1.3rem; }
+                .logo-subtitle { font-size: 0.75rem; }
+
+                @media (max-width: 576px) {
+                    .logo-col {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                        padding: 10px 0;
+                    }
+                    .logo-wrapper {
+                        justify-content: center;
+                        background: rgba(255, 135, 23, 0.05); /* Subtle modern glow */
+                        padding: 8px 20px;
+                        border-radius: 50px;
+                        border: 1px solid rgba(255, 135, 23, 0.1);
+                    }
+                    .logo-text-block {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                    }
+                    .logo-img { 
+                        max-width: 26px; 
+                        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+                    }
+                    .logo-title {
+                        font-size: 1.1rem !important;
+                        font-weight: 900 !important;
+                        white-space: nowrap;
+                        color: #FF8717 !important; /* Modern Brand Orange */
+                        font-family: 'Inter', sans-serif !important;
+                        letter-spacing: -0.5px;
+                        text-transform: uppercase;
+                    }
+                    .logo-subtitle { 
+                        display: inline-block !important; 
+                        font-size: 1.1rem !important;
+                        font-weight: 900 !important;
+                        white-space: nowrap;
+                        margin: 0 !important;
+                        color: #222 !important; /* Professional Dark Charcoal */
+                        font-family: 'Inter', sans-serif !important;
+                        letter-spacing: -0.5px;
+                        text-transform: uppercase;
+                    }
+                }
                 
                 .icon-btn { transition: all 0.3s ease; }
                 .icon-btn:hover, .dropdown.show .icon-btn {

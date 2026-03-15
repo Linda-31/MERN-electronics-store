@@ -86,7 +86,7 @@ const RegisterScreen = () => {
                             onChange={(e) => setIsAdmin(e.target.value === 'true')}
                         >
                             <option value="false">Customer</option>
-                            <option value="true">Admin</option>
+                            <option value="true" disabled style={{ color: '#aaa' }}>Admin (Disabled)</option>
                         </Form.Select>
                     </Form.Group>
 
