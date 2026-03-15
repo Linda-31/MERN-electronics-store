@@ -161,6 +161,9 @@ const HeroCarousel = () => {
                     .hero-price {
                         font-size: 1.2rem;
                     }
+                    .hero-img-2 {
+                        max-height: 250px !important;
+                    }
                 }
             `}</style>
             <Slider {...settings}>
@@ -178,7 +181,7 @@ const HeroCarousel = () => {
                                         <img
                                             src={slide.image}
                                             alt={slide.heading}
-                                            className='img-fluid'
+                                            className={`img-fluid hero-img-${slide.id}`}
                                             style={{ maxHeight: '350px', animation: 'fadeInRight 1s' }}
                                         />
                                     </Col>
