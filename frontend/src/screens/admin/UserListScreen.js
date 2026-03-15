@@ -98,15 +98,15 @@ const UserListScreen = () => {
                 <div className='alert alert-danger'>{error}</div>
             ) : (
                 <div className="bg-white rounded shadow-sm border overflow-hidden">
-                    <Table responsive hover className="mb-0 align-middle border-0">
+                    <Table hover className="mb-0 align-middle border-0 user-table">
                         <thead className="bg-light border-0">
                             <tr>
                                 <th className="ps-4 py-3 text-muted fw-semibold" style={{ fontSize: '12px' }}>NAME</th>
-                                <th className="py-3 text-muted fw-semibold" style={{ fontSize: '12px' }}>EMAIL</th>
+                                <th className="py-3 text-muted fw-semibold d-none d-sm-table-cell" style={{ fontSize: '12px' }}>EMAIL</th>
                                 <th className="py-3 text-muted fw-semibold d-none d-md-table-cell" style={{ fontSize: '12px' }}>REGISTER DATE</th>
                                 <th className="py-3 text-muted fw-semibold d-none d-lg-table-cell" style={{ fontSize: '12px' }}>ACCOUNT TYPE</th>
                                 <th className="py-3 text-muted fw-semibold d-none d-xl-table-cell" style={{ fontSize: '12px' }}>LAST ACTIVE</th>
-                                <th className="py-3 text-muted fw-semibold" style={{ fontSize: '12px' }}>STATUS</th>
+                                <th className="py-3 text-muted fw-semibold d-none d-sm-table-cell" style={{ fontSize: '12px' }}>STATUS</th>
                                 <th className="pe-4 py-3"></th>
                             </tr>
                         </thead>
@@ -115,15 +115,15 @@ const UserListScreen = () => {
                                 <tr key={user._id} className="border-bottom">
                                     <td className="ps-4 py-3">
                                         <div className="d-flex align-items-center">
-                                            <div className="me-3">
-                                                <FaUserCircle size={40} style={{ color: '#FF8717' }} />
+                                            <div className="me-2 me-md-3">
+                                                <FaUserCircle className="user-icon" style={{ color: '#FF8717' }} />
                                             </div>
                                             <div>
-                                                <div className="fw-bold text-dark mb-0" style={{ fontSize: '14px' }}>{user.name}</div>
+                                                <div className="fw-bold text-dark mb-0 user-name-text" style={{ fontSize: '14px' }}>{user.name}</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="py-3" style={{ fontSize: '14px', color: '#555' }}>
+                                    <td className="py-3 d-none d-sm-table-cell" style={{ fontSize: '14px', color: '#555' }}>
                                         {user.email}
                                     </td>
                                     <td className="py-3 d-none d-md-table-cell" style={{ fontSize: '14px', color: '#555' }}>
@@ -135,7 +135,7 @@ const UserListScreen = () => {
                                     <td className="py-3 d-none d-xl-table-cell" style={{ fontSize: '14px', color: '#555' }}>
                                         {Math.floor(Math.random() * 50) + 1} min ago
                                     </td>
-                                    <td className="py-3">
+                                    <td className="py-3 d-none d-sm-table-cell">
                                         <Badge
                                             pill
                                             className="px-3 py-2 active-badge"
@@ -187,6 +187,28 @@ const UserListScreen = () => {
                 .active-badge {
                     background-color: #FFF3E0 !important;
                     color: #FF8717 !important;
+                }
+                .user-icon {
+                    font-size: 40px;
+                }
+@media (max-width: 576px) {
+                    .user-icon {
+                        font-size: 28px;
+                    }
+                    .user-name-text {
+                        font-size: 12px !important;
+                        word-break: break-word;
+                    }
+                    .user-table td, .user-table th {
+                        padding-top: 8px !important;
+                        padding-bottom: 8px !important;
+                        padding-left: 8px !important;
+                        padding-right: 8px !important;
+                    }
+                    .user-table {
+                        table-layout: fixed;
+                        width: 100%;
+                    }
                 }
             `}</style>
         </Container>
