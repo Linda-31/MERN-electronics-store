@@ -6,21 +6,42 @@ import banner from '../assets/watch.jpg';
 const WaterproofBanner = () => {
     return (
         <div style={{ padding: '40px 0', backgroundColor: '#fff' }}>
+            <style>{`
+                .banner-wrapper {
+                    background-image: url(${banner});
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: 20px;
+                    padding: 60px;
+                    position: relative;
+                    overflow: hidden;
+                    min-height: 300px;
+                    display: flex;
+                    align-items: center;
+                }
+                .banner-content {
+                    position: relative;
+                    z-index: 2;
+                    max-width: 50%;
+                }
+                @media (max-width: 768px) {
+                    .banner-wrapper {
+                        padding: 40px 20px;
+                        justify-content: center;
+                        text-align: center;
+                    }
+                    .banner-content {
+                        max-width: 100%;
+                    }
+                    .banner-content h2 {
+                        font-size: 1.8rem !important;
+                    }
+                }
+            `}</style>
             <Container>
-                <div
-                    style={{
-                        backgroundImage: `url(${banner})`,
-                        borderRadius: '20px',
-                        padding: '60px',
-                        position: 'relative',
-                        overflow: 'hidden',
-                        minHeight: '300px',
-                        display: 'flex',
-                        alignItems: 'center',
-                    }}
-                >
+                <div className="banner-wrapper">
                     {/* Left Content */}
-                    <div style={{ position: 'relative', zIndex: 2, maxWidth: '50%' }}>
+                    <div className="banner-content">
                         <div
                             style={{
                                 backgroundColor: '#FF8717',

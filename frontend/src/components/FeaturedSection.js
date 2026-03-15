@@ -76,8 +76,11 @@ const FeaturedSection = () => {
     ];
 
     return (
-        <section className="featured-section-new" style={{ padding: '80px 0', overflow: 'hidden' }}>
+        <section className="featured-section-new" style={{ overflow: 'hidden' }}>
             <style>{`
+                .featured-section-new {
+                    padding: 80px 0;
+                }
                 .featured-section-new .slick-list {
                     overflow: visible;
                 }
@@ -137,6 +140,24 @@ const FeaturedSection = () => {
                     color: #333;
                     margin-bottom: 5px;
                 }
+                .featured-title {
+                    font-size: 3rem;
+                    font-weight: 800;
+                    line-height: 1.1;
+                    margin: 15px 0;
+                    color: #1a1a1a;
+                    white-space: pre-line;
+                }
+                .title-divider {
+                    width: 80%;
+                    height: 1px;
+                    background-color: #e0e0e0;
+                    margin: 20px 0;
+                }
+                .feature-icons-container {
+                    display: flex;
+                    gap: 1.5rem;
+                }
                 .custom-arrow {
                     position: absolute;
                     top: 50%;
@@ -161,11 +182,15 @@ const FeaturedSection = () => {
                 .next-arrow { right: -60px; }
                 
                 @media (max-width: 991px) {
+                    .featured-section-new {
+                        padding: 40px 0 !important;
+                    }
                     .capsule-bg {
                         border-radius: 50px;
-                        padding: 40px;
+                        padding: 30px 20px;
                         flex-direction: column;
                         text-align: center;
+                        min-height: auto;
                     }
                     .product-image-featured {
                         position: relative;
@@ -174,6 +199,24 @@ const FeaturedSection = () => {
                         bottom: 0;
                         margin: 20px 0;
                         max-height: 300px;
+                    }
+                    .featured-title {
+                        font-size: 1.8rem;
+                    }
+                    .title-divider {
+                        margin: 15px auto;
+                    }
+                    .feature-icons-container {
+                        gap: 10px;
+                        justify-content: center;
+                    }
+                    .icon-circle {
+                        width: 30px;
+                        height: 30px;
+                        font-size: 12px;
+                    }
+                    .feature-text {
+                        font-size: 10px;
                     }
                     .custom-arrow { display: none !important; }
                     .prev-arrow { left: 10px; }
@@ -189,21 +232,21 @@ const FeaturedSection = () => {
                                 <div className="capsule-bg">
                                     <Row className="w-100 align-items-center">
                                         <Col lg={5} md={12}>
-                                            <div className="ps-lg-4 text-start">
+                                            <div className="ps-lg-4 text-center text-lg-start">
                                                 <small style={{ color: '#666', fontWeight: '600', letterSpacing: '1px' }}>{slide.title}</small>
-                                                <h2 style={{ fontSize: '3rem', fontWeight: '800', lineHeight: '1.1', margin: '15px 0', color: '#1a1a1a', whiteSpace: 'pre-line' }}>
+                                                <h2 className="featured-title">
                                                     {slide.name}
                                                 </h2>
-                                                <div style={{ width: '80%', height: '1px', backgroundColor: '#e0e0e0', margin: '20px 0' }}></div>
-                                                <p style={{ color: '#666', fontSize: '14px', maxWidth: '400px', marginBottom: '30px' }}>
+                                                <div className="title-divider"></div>
+                                                <p style={{ color: '#666', fontSize: '14px', maxWidth: '400px', marginBottom: '30px', marginInline: 'auto' }}>
                                                     {slide.description}
                                                 </p>
 
-                                                <div className="d-flex gap-4">
+                                                <div className="feature-icons-container justify-content-center justify-content-lg-start">
                                                     {slide.features.map((feat, fIdx) => (
                                                         <div key={fIdx} className="feature-icon-item">
                                                             <div className="icon-circle">{feat.icon}</div>
-                                                            <div className="feature-text">
+                                                            <div className="feature-text text-start">
                                                                 {feat.label}<br />{feat.subLabel}
                                                             </div>
                                                         </div>
@@ -217,7 +260,7 @@ const FeaturedSection = () => {
                                         </Col>
 
                                         <Col lg={5} md={12}>
-                                            <div className="ps-lg-5 text-start">
+                                            <div className="ps-lg-5 text-center text-lg-start mt-4 mt-lg-0">
                                                 <div className="hot-badge">{slide.badge}</div>
                                                 <div className="featured-price">{slide.price}</div>
                                                 <p style={{ color: '#555', fontSize: '15px', marginBottom: '25px' }}>{slide.discount}</p>
@@ -242,10 +285,6 @@ const FeaturedSection = () => {
                                         alt={slide.name}
                                         className="product-image-featured d-none d-lg-block"
                                     />
-                                </div>
-                                {/* Mobile Image */}
-                                <div className="d-lg-none text-center mt-3">
-                                    <img src={slide.image} alt={slide.name} style={{ maxHeight: '250px' }} />
                                 </div>
                             </div>
                         ))}

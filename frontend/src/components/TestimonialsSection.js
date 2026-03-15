@@ -7,9 +7,11 @@ const TestimonialsSection = () => {
     const sliderRef = useRef(null);
 
     const settings = {
-        dots: false,
+        dots: true,
         infinite: true,
-        speed: 500,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 800,
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
@@ -17,11 +19,17 @@ const TestimonialsSection = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                 }
             },
             {
                 breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 576,
                 settings: {
                     slidesToShow: 1,
                 }
@@ -62,7 +70,20 @@ const TestimonialsSection = () => {
 
     return (
         <div style={{ padding: '60px 0', backgroundColor: '#f9f9f9' }}>
-            <Container>
+            <style>{`
+                @media (max-width: 991px) {
+                    .custom-nav-btn {
+                        display: none !important;
+                    }
+                    .testimonial-container {
+                        padding: 30px 0 !important;
+                    }
+                    .testimonial-title {
+                        font-size: 1.8rem !important;
+                    }
+                }
+            `}</style>
+            <Container className="testimonial-container">
                 <div className="text-center mb-5">
                     <div style={{
                         color: '#FF8717',
@@ -74,7 +95,7 @@ const TestimonialsSection = () => {
                     }}>
                        Client Spotlight
                     </div>
-                    <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#333' }}>
+                    <h2 className="testimonial-title" style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#333' }}>
                         Our Good Customers
                     </h2>
                 </div>
@@ -82,6 +103,7 @@ const TestimonialsSection = () => {
                 <div style={{ position: 'relative' }}>
                     {/* Custom Navigation Arrows */}
                     <button
+                        className="custom-nav-btn"
                         onClick={() => sliderRef.current?.slickPrev()}
                         style={{
                             position: 'absolute',
@@ -115,6 +137,7 @@ const TestimonialsSection = () => {
                     </button>
 
                     <button
+                        className="custom-nav-btn"
                         onClick={() => sliderRef.current?.slickNext()}
                         style={{
                             position: 'absolute',

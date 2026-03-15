@@ -109,6 +109,37 @@ const ProductsShowcaseSection = () => {
 
     return (
         <div style={{ padding: '60px 0', backgroundColor: '#fff' }}>
+            <style>{`
+                .showcase-banner {
+                    background-repeat: no-repeat;
+                    background-position: bottom right;
+                    border-radius: 15px;
+                    padding: 40px;
+                    position: relative;
+                    overflow: hidden;
+                    min-height: 280px;
+                    background-size: cover;
+                }
+                .banner-content-inner {
+                    position: relative;
+                    zIndex: 2;
+                    max-width: 50%;
+                }
+                @media (max-width: 768px) {
+                    .showcase-banner {
+                        padding: 30px 20px !important;
+                        min-height: 220px !important;
+                        background-size: 50% !important; /* Reduced background image size */
+                        background-position: right bottom !important;
+                    }
+                    .banner-content-inner {
+                        max-width: 70% !important;
+                    }
+                    .banner-content-inner h3 {
+                        font-size: 1.4rem !important;
+                    }
+                }
+            `}</style>
             <Container>
                 <Row>
                     {/* Left Column - Featured Products */}
@@ -134,19 +165,8 @@ const ProductsShowcaseSection = () => {
                     {/* Right Column - Promotional Banners */}
                     <Col lg={6} md={12}>
                         {/* VR Goggles Banner */}
-                        <div style={{
-                            backgroundImage: `url(${goggles})`,
-                            backgroundSize: 'cover',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundPosition: 'bottom right',
-                            borderRadius: '15px',
-                            padding: '40px',
-                            marginBottom: '20px',
-                            position: 'relative',
-                            overflow: 'hidden',
-                            minHeight: '280px'
-                        }}>
-                            <div style={{ position: 'relative', zIndex: 2, maxWidth: '50%' }}>
+                        <div className="showcase-banner mb-4" style={{ backgroundImage: `url(${goggles})` }}>
+                            <div className="banner-content-inner">
                                 <div style={{
                                     fontSize: '0.75rem',
                                     fontWeight: 'bold',
@@ -165,7 +185,7 @@ const ProductsShowcaseSection = () => {
                                     Best VR
                                 </h3>
                                 <p style={{ fontSize: '0.85rem', color: '#666', marginBottom: '20px' }}>
-                                    Perfect to enjoy VR games
+                                    Perfect VR games
                                 </p>
                                 <Link to="/shop">
                                     <Button style={{
@@ -184,18 +204,8 @@ const ProductsShowcaseSection = () => {
                         </div>
 
                         {/* Electric Kettle Banner */}
-                        <div style={{
-                            backgroundImage: `url(${kettle})`,
-                            backgroundSize: 'cover',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundPosition: 'bottom right',
-                            borderRadius: '15px',
-                            padding: '40px',
-                            position: 'relative',
-                            overflow: 'hidden',
-                            minHeight: '280px'
-                        }}>
-                            <div style={{ position: 'relative', zIndex: 2, maxWidth: '50%' }}>
+                        <div className="showcase-banner" style={{ backgroundImage: `url(${kettle})` }}>
+                            <div className="banner-content-inner">
                                 <div style={{
                                     fontSize: '0.75rem',
                                     fontWeight: 'bold',
