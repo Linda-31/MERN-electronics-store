@@ -170,9 +170,58 @@ const TestimonialsSection = () => {
                         <FaChevronRight style={{ color: '#333', fontSize: '18px' }} />
                     </button>
 
-                    <Slider ref={sliderRef} {...settings}>
-                        {testimonials.map((testimonial, index) => (
-                            <div key={index} style={{ padding: '0 15px' }}>
+                    <div className="d-none d-sm-block">
+                        <Slider ref={sliderRef} {...settings}>
+                            {testimonials.map((testimonial, index) => (
+                                <div key={index} style={{ padding: '0 15px' }}>
+                                    <div
+                                        style={{
+                                            backgroundColor: '#fff',
+                                            borderRadius: '15px',
+                                            padding: '30px',
+                                            textAlign: 'center',
+                                            boxShadow: '0 2px 15px rgba(0,0,0,0.08)',
+                                            transition: 'transform 0.3s',
+                                        }}
+                                        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                                        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                                    >
+                                        <img
+                                            src={testimonial.image}
+                                            alt={testimonial.name}
+                                            style={{
+                                                width: '80px',
+                                                height: '80px',
+                                                borderRadius: '50%',
+                                                marginBottom: '15px',
+                                                objectFit: 'cover',
+                                                border: '3px solid #f0f0f0'
+                                            }}
+                                        />
+                                        <div style={{ marginBottom: '10px' }}>
+                                            {[...Array(testimonial.rating)].map((_, i) => (
+                                                <FaStar key={i} style={{ color: '#FFD700', fontSize: '14px', marginRight: '2px' }} />
+                                            ))}
+                                        </div>
+                                        <h5 style={{ fontWeight: 'bold', marginBottom: '5px', color: '#333' }}>
+                                            {testimonial.name}
+                                        </h5>
+                                        <p style={{ color: '#999', fontSize: '0.85rem', marginBottom: '15px' }}>
+                                            {testimonial.role}
+                                        </p>
+                                        <p style={{ color: '#666', fontSize: '0.9rem', lineHeight: '1.6' }}>
+                                            {testimonial.text}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </Slider>
+                    </div>
+
+                    {/* Mobile View: Static vertical list of 3 reviews */}
+                    <div className="d-block d-sm-none">
+                        {testimonials.slice(0, 3).map((testimonial, index) => (
+                            <div key={index} className="mb-4 px-2">
                                 <div
                                     style={{
                                         backgroundColor: '#fff',
@@ -180,10 +229,7 @@ const TestimonialsSection = () => {
                                         padding: '30px',
                                         textAlign: 'center',
                                         boxShadow: '0 2px 15px rgba(0,0,0,0.08)',
-                                        transition: 'transform 0.3s',
                                     }}
-                                    onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                                    onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                                 >
                                     <img
                                         src={testimonial.image}
@@ -214,7 +260,7 @@ const TestimonialsSection = () => {
                                 </div>
                             </div>
                         ))}
-                    </Slider>
+                    </div>
                 </div>
             </Container>
         </div>

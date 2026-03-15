@@ -46,37 +46,37 @@ const CategorySection = () => {
         {
             name: 'Laptops Cell \n Tablets',
             image: 'https://themexriver.com/wp/radios/wp-content/uploads/2023/05/feature-1.png',
-            link: '/search?category=laptops',
+            link: '/shop',
             bgColor: '#E8F0FE', // Light blue
         },
         {
             name: 'SmartPhones \n & GPS',
             image: 'https://themexriver.com/wp/radios/wp-content/uploads/2023/05/feature-2.png',
-            link: '/search?category=smartphones',
+            link: '/shop',
             bgColor: '#FFE4E8', // Light pink
         },
         {
             name: 'Desktop \n Computers',
             image: 'https://themexriver.com/wp/radios/wp-content/uploads/2023/05/feature-3.png',
-            link: '/search?category=computers',
+            link: '/shop',
             bgColor: '#E8F8E8', // Light green
         },
         {
             name: 'Peripheral \n Devices',
             image: 'https://themexriver.com/wp/radios/wp-content/uploads/2023/05/feature-5.png',
-            link: '/search?category=peripherals',
+            link: '/shop',
             bgColor: '#F0E8F8', // Light purple
         },
         {
             name: 'Game \n Consoles',
             image: 'https://themexriver.com/wp/radios/wp-content/uploads/2023/05/feature-4.png',
-            link: '/search?category=consoles',
+            link: '/shop',
             bgColor: '#FFF8E0', // Light yellow
         },
         {
             name: 'Cameras \n & Audio',
             image: 'https://themexriver.com/wp/radios/wp-content/uploads/2023/05/feature-1.png', // Reusing image
-            link: '/search?category=cameras',
+            link: '/shop',
             bgColor: '#FFE4E8', // Light pink
         },
     ];

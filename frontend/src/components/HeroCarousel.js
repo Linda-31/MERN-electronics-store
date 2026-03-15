@@ -193,7 +193,7 @@ const HeroCarousel = () => {
                                             <div data-aos="fade-right" data-aos-delay="60" className="hero-price">
                                                 {slide.price}
                                             </div>
-                                            <Link to='/search'>
+                                            <Link to='/shop'>
                                                 <Button data-aos="fade-right" data-aos-delay="40"
                                                     variant='primary'
                                                     size='lg'
