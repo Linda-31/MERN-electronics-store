@@ -5,6 +5,12 @@
 A **high-performance e-commerce platform** for electronics, built using the **MERN stack** (MongoDB, Express.js, React.js, and Node.js). This application features a seamless shopping experience for gadgets, secure multi-method payments, and a robust user management system.
 
 ---
+## 🌐 Project in Live 
+You can access the live version of this project here:
+
+**ElectronicsStore:** [https://frontend-store-api.onrender.com](https://frontend-store-api.onrender.com)
+
+---
 
 ## Features
 
@@ -59,14 +65,6 @@ A **high-performance e-commerce platform** for electronics, built using the **ME
 
 ###  Admin Dashboard
 <img width="1332" height="641" alt="Image" src="https://github.com/user-attachments/assets/d922d89d-3bf9-45f5-8c85-08f0ca014054" />
-
----
-
-## 🌐 Project in Live 
-
-You can access the live version of this project here:
-
-**ElectronicsStore:** [https://frontend-store-api.onrender.com](https://frontend-store-api.onrender.com)
 
 ---
 
